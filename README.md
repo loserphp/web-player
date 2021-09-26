@@ -2,7 +2,7 @@
 
 ## descript
 
-a js web player
+javascript web 在线播放器，专注于播放能力
 
 
 ## 
