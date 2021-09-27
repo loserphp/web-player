@@ -66,7 +66,7 @@ export class EventControl {
     keys.map((item) => {
       this._mediaElement.removeEventListener(
         videoEvents[item],
-        this.e['video' + this.upperFChart(videoEvents[item])].bind(this)
+        this.e['video' + this.upperFChart(videoEvents[item])]
       )
     })
 

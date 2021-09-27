@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>web player demo page</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/flv.js/1.6.1/flv.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/hls.js/1.0.8-0.canary.7807/hls.js"></script>
+  <script src="./webPlayer.js"></script>
+
+  <style>
+    .input-container {
+      padding: 20px;
+      display: flex;
+
+    }
+
+    .input-container input {
+      flex: 1
+    }
+
+    #video_container {
+      /* width: auto; */
+      min-width: 375px;
+      min-width: 375 px;
+      width: 100%;
+      min-height: 300 px;
+      background: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="input-container">
+    视频地址：<input id="videoUrl" type="text" placeholder="请输入视频地址"
+      value="http://kbs-dokdo.gscdn.com/dokdo_300/_definst_/dokdo_300.stream/playlist.m3u8">
+    <button id="loadBtn" onclick="loadVideo()">加载</button> <button id="destroyBtn" onclick="destroyVideo()">销毁</button>
+    <button id="stopBtn" onclick="stopVideo()">暂停</button> <button id="playBtn" onclick="playVideo()">播放</button>
+  </div>
+
+  <div id="video_container"></div>
+</body>
+
+</html>
+
+<script>
+  function $(el) {
+    return document.querySelector(el)
+  }
+
+  function loadVideo() {
+    window.player = webPlayer.createPlayer($('#videoUrl').value, $('#video_container'), {
+      // config
+    })
+  }
+
+  function destroyVideo() {
+    window.player && window.player.destroy()
+    window.player = null
+  }
+
+  function stopVideo() {
+    window.player && window.player.pause()
+  }
+
+  function playVideo() {
+    window.player && window.player.play()
+  }
+
+  window.onload = function () {
+    loadVideo()
+  }
+
+</script>

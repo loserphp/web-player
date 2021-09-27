@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>player demo</title><style>#video_container {
+      /* width: auto; */
+      min-width: 375px;
+    }
+
+    .swiper {
+      width: 600px;
+      height: 300px;
+      background: #ccc;
+    }</style><link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/><script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/flv.js/1.6.1/flv.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/hls.js/1.0.8-0.canary.7807/hls.js"></script><script src="webPlayer.js"></script></head><body><div id="video_container"></div><div class="swiper"><div class="swiper-wrapper"><div class="swiper-slide">Slide 1</div><div class="swiper-slide">Slide 2</div><div class="swiper-slide">Slide 3</div></div></div></body></html><script>// import Swiper from 'swiper'
+  // import 'swiper/css'
+
+  var catchs = []
+  var currentIndex = 0
+  var timeout = null
+
+  window.onload = () => {
+    console.log('  window.onload ');
+
+    this._swiper = new Swiper('.swiper', {
+      direction: 'vertical',
+      loop: true,
+    });
+    this._swiper.on('slideChange', function (index) {
+      console.log('slide changed', index);
+    });
+
+
+
+    // catchs.push(webPlayer.createPlayer('cut.mp4', document.querySelectorAll('.swiper-slide')[currentIndex]))
+
+
+
+    // window.player = webPlayer.createPlayer('cut.mp4', document.getElementById('video_container'), {
+    // })
+
+    // window.player = webPlayer.createPlayer('15868902d399b87.flv', document.getElementById('video_container'), {
+    //   // config
+    // })
+
+    window.player = webPlayer.createPlayer('http://kbs-dokdo.gscdn.com/dokdo_300/_definst_/dokdo_300.stream/playlist.m3u8', document.getElementById('video_container'), {
+      // config
+    })
+
+  }</script>
