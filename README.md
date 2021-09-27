@@ -1,10 +1,10 @@
 # WebPlayer
 
-### descript
+## descript
 
 javascript web 在线播放器，专注于播放能力
 
-#### 待实现功能清单
+## ToDoList
 
 前置条件：
   1. 项目架构设计，需考虑能力拆分和功能扩展
@@ -33,5 +33,5 @@ javascript web 在线播放器，专注于播放能力
 5. 基于WebAssembly能力的其他视频格式适配
 
 
-## 
+## end
 fighting
